@@ -25,7 +25,7 @@ const NotFoundPage = lazy(() => {
 export const Routes: React.FC = () => {
   return useRoutes([
     { path: '/', element: <HomePage /> },
-    { path: '/review', element: <FilmReview /> },
+    { path: '/review/:movieId', element: <FilmReview /> },
     {
       path: '*',
       element: <NotFoundPage />

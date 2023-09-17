@@ -95,3 +95,23 @@ export const BoxButton = styled.div`
     }
   `}
 `;
+
+export const BoxLink = styled.div`
+  ${({ theme }) => css`
+    width: 100%;
+    & a {
+      height: 4rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 0.5rem;
+      width: 100%;
+      border: none;
+      background-color: ${theme.variant.blueDark};
+      color: ${theme.variant.white};
+      font-size: 1.5rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+  `}
+`;

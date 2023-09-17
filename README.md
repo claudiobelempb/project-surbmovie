@@ -1,6 +1,7 @@
 # project-surbmovie
 
 ## Diagramas de Classes
+
 ```mermaid
 classDiagram
     class Movie{
@@ -10,7 +11,7 @@ classDiagram
       +Number count
       +String url
     }
-    class Sore{
+    class Score{
       -Number value
     }
     class User{
@@ -18,6 +19,6 @@ classDiagram
       +String email
     }
 
-    Movie "n" -- "n" User
-    Movie .. Sore
+    Score "n" -- "n" Movie
+    Score .. User
 ```

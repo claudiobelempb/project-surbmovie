@@ -80,7 +80,7 @@ export const BoxStarTitle = styled.p`
   ${({ theme }) => css`
     color: ${theme.variant.white};
     text-align: center;
-    font-size: 1.8rem;
+    font-size: 1.2rem;
     font-weight: 700;
     width: 3rem;
     height: 3rem;
@@ -112,15 +112,15 @@ export const SubTitle = styled.p`
 
 export const BoxLink = styled(Link)`
   ${({ theme }) => css`
-    width: 14rem;
-    height: 4rem;
+    width: 10rem;
+    height: 3.5rem;
     position: absolute;
-    bottom: 8rem;
+    bottom: 0;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    padding: 1rem 2rem;
+    padding: 0.5rem 1.5rem;
     background-color: ${theme.variant.blue};
     color: ${theme.variant.white};
     border: none;
@@ -128,7 +128,7 @@ export const BoxLink = styled(Link)`
     cursor: pointer;
     margin-bottom: 3rem;
     font-weight: 700;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
 
     &:hover {
       transform: scale(1.3);

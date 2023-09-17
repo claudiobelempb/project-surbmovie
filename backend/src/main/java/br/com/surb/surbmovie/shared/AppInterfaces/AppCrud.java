@@ -1,15 +1,19 @@
 package br.com.surb.surbmovie.shared.AppInterfaces;
 
-import java.util.List;
+import org.springframework.data.domain.Page;
 
-public interface AppCrud<D, E> {
-	List<E> findAll();
+public interface AppCrud<ID, DTO, UPDTO, P> {
+	Page<DTO> findAll(P pageable);
 
-	E findById(D id);
+	DTO findById(ID id);
 
-	E create(E entity);
+	DTO create(DTO dto);
 
-	E update(D id, E entity);
+	DTO update(ID id, DTO dto);
+	
+	UPDTO update(DTO dto);
 
-	void delete(D id);
+	void updateVoid(DTO dto);
+
+	void delete(ID id);
 }

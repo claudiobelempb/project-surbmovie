@@ -10,29 +10,31 @@ import {
   Title
 } from './styles';
 
-import { FaRegStar, FaStar, FaStarHalfAlt } from 'react-icons/fa';
+import { Movie } from '../../utils/types/Movie';
+import AppStar from '../AppStar/index';
 
-import ImgFilme from '../../assets/images/filme-01.jpg';
-const AppCard: React.FC = () => {
+type PropsMovie = {
+  movie: Movie;
+};
+
+const AppCard: React.FC<PropsMovie> = ({ movie }: PropsMovie) => {
   return (
     <Container>
       <ContentImg>
-        <img src={ImgFilme} alt='' />
-        <BoxLink to={'/review'}>Avaliar</BoxLink>
+        <img src={movie.url} alt='' />
+        <BoxLink to={`/review/${movie.movieId}`}>Avaliar</BoxLink>
       </ContentImg>
       <Content>
         <Box>
-          <Title>O Espetacular Homem-Aranha 2: A Ameaça de Electro</Title>
+          <Title>{movie.title}</Title>
           <BoxStar>
-            <BoxStarTitle>3.8</BoxStarTitle>
+            <BoxStarTitle>
+              {movie.score > 0 ? movie.score.toFixed(1) : 0}
+            </BoxStarTitle>
             <>
-              <FaStar />
-              <FaStar />
-              <FaStarHalfAlt />
-              <FaStarHalfAlt />
-              <FaRegStar />
+              <AppStar fill={movie.score} />
             </>
-            <SubTitle>13 avaliações</SubTitle>
+            <SubTitle>{movie.count} avaliações</SubTitle>
           </BoxStar>
         </Box>
       </Content>
