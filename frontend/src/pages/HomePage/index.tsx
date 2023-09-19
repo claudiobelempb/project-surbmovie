@@ -25,7 +25,9 @@ const HomePage: React.FC = () => {
 
   useEffect(() => {
     axios
-      .get(`${BASE_URL}/movies?size=12&page=${pageNumber}&sort=title`)
+      .get(`${BASE_URL}/movies?size=12&page=${pageNumber}&sort=title`, {
+        withCredentials: false
+      })
       .then(response => {
         const data = response.data as MoviePage;
         setPage(data);
